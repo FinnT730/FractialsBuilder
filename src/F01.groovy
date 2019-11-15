@@ -15,7 +15,12 @@ class F01 extends Component implements MouseListener{
     float panY = 0.6
 
 
-
+    /***
+     *
+     * @param x
+     * @param y
+     * @return This will return a number that is a Float. You can change this also to a boolean return
+     */
     def belongsIn(double x, double y) {
 
 
@@ -49,7 +54,11 @@ class F01 extends Component implements MouseListener{
         return 0;
     }
 
-
+    /***
+     * This function will paint the Mandelbrot on the canvas. Because of the complex functions, this is not optimized AT all.
+     * (The optimization is in the TODO list)
+     * @param g
+     */
     @VM_keep(retain = true)
     @Override
     void paint(Graphics g) {
