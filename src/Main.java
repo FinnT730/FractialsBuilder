@@ -15,6 +15,9 @@ public class Main {
 
     private static JFrame fr = new JFrame("Fract");
 
+
+    private static FractialLoader floader = new FractialLoader();
+
     public static void main(String[] args) {
 
 
@@ -23,7 +26,7 @@ public class Main {
         fr.setSize(width,height);
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setVisible(true);
-        fr.add(f0).addMouseListener(f0);
+        fr.add(f0).addMouseListener(floader.mandel);
     }
 
 
