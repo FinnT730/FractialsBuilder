@@ -1,0 +1,904 @@
+Index: src/FractialLoader.java
+===================================================================
+--- src/FractialLoader.java	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ src/FractialLoader.java	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
+@@ -1,9 +0,0 @@
+-public class FractialLoader {
+-
+-
+-
+-
+-    public F01 mandel = new F01();
+-
+-
+-}
+Index: src/Main.java
+===================================================================
+--- src/Main.java	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ src/app/Main.java	(date 1573816936610)
+@@ -1,7 +1,6 @@
+-import groovyjarjarasm.asm.AnnotationVisitor;
++package app;
+ 
+ import javax.swing.*;
+-import java.awt.event.MouseListener;
+ 
+ public class Main {
+ 
+Index: src/F01.groovy
+===================================================================
+--- src/F01.groovy	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ src/app/F01.groovy	(date 1573816936709)
+@@ -1,9 +1,9 @@
+-import groovy.transform.Generated
++package app
++
+ 
+ import java.awt.Color
+ import java.awt.Component
+ import java.awt.Graphics
+-import java.awt.color.ColorSpace
+ import java.awt.event.MouseEvent
+ import java.awt.event.MouseListener
+ 
+@@ -64,8 +64,8 @@
+     void paint(Graphics g) {
+         super.paint(g)
+ 
+-//        for(int i = 0; i < Main.width; i++) {
+-//            for(int j = 0; j < Main.height; j++) {
++//        for(int i = 0; i < app.Main.width; i++) {
++//            for(int j = 0; j < app.Main.height; j++) {
+ //            }
+ //        }
+ 
+Index: GroovyDocs/index-all.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- GroovyDocs/index-all.html	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ GroovyDocs/index-all.html	(date 1573816936602)
+@@ -132,7 +132,7 @@
+ <h2 class="title">B</h2>
+ <dl>
+ 
+-<dt><span class="strong"><a href="src/F01.html#belongsIn(double, double)" title="Method in F01">belongsIn(double, double)</a></span> - Method in <a href="src/F01.html">F01</a>
++<dt><span class="strong"><a href="src/app.F01.html#belongsIn(double, double)" title="Method in app.F01">belongsIn(double, double)</a></span> - Method in <a href="src/app.F01.html">app.F01</a>
+ </dt><dd> <div class="block">@param x</div></dd>
+ </dl>
+ 
+@@ -162,17 +162,17 @@
+ <h2 class="title">F</h2>
+ <dl>
+ 
+-<dt><span class="strong"><a href="src/F01.html" title="Class in src">F01</a></span> - Class in <a href="./src/package-summary.html">src</a>
++<dt><span class="strong"><a href="src/app.F01.html" title="Class in src">app.F01</a></span> - Class in <a href="./src/package-summary.html">src</a>
+ </dt><dd><div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/F01.html#F01()" title="Constructor in F01">F01()</a></span> - Constructor in <a href="src/F01.html">F01</a>
++<dt><span class="strong"><a href="src/app.F01.html#app.F01()" title="Constructor in app.F01">app.F01()</a></span> - Constructor in <a href="src/app.F01.html">app.F01</a>
+ </dt><dd> <div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/Main.html#floader" title="Field in Main">floader</a></span> - Field in <a href="src/Main.html">Main</a>
++<dt><span class="strong"><a href="src/app.Main.html#floader" title="Field in app.Main">floader</a></span> - Field in <a href="src/app.Main.html">app.Main</a>
+ </dt><dd> <div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/Main.html#fr" title="Field in Main">fr</a></span> - Field in <a href="src/Main.html">Main</a>
++<dt><span class="strong"><a href="src/app.Main.html#fr" title="Field in app.Main">fr</a></span> - Field in <a href="src/app.Main.html">app.Main</a>
+ </dt><dd> <div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/FractialLoader.html" title="Class in src">FractialLoader</a></span> - Class in <a href="./src/package-summary.html">src</a>
++<dt><span class="strong"><a href="src/app.FractialLoader.html" title="Class in src">app.FractialLoader</a></span> - Class in <a href="./src/package-summary.html">src</a>
+ </dt><dd><div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/FractialLoader.html#FractialLoader()" title="Constructor in FractialLoader">FractialLoader()</a></span> - Constructor in <a href="src/FractialLoader.html">FractialLoader</a>
++<dt><span class="strong"><a href="src/app.FractialLoader.html#app.FractialLoader()" title="Constructor in app.FractialLoader">app.FractialLoader()</a></span> - Constructor in <a href="src/app.FractialLoader.html">app.FractialLoader</a>
+ </dt><dd> <div class="block"></div></dd>
+ </dl>
+ 
+@@ -188,7 +188,7 @@
+ <h2 class="title">H</h2>
+ <dl>
+ 
+-<dt><span class="strong"><a href="src/Main.html#height" title="Field in Main">height</a></span> - Field in <a href="src/Main.html">Main</a>
++<dt><span class="strong"><a href="src/app.Main.html#height" title="Field in app.Main">height</a></span> - Field in <a href="src/app.Main.html">app.Main</a>
+ </dt><dd> <div class="block"></div></dd>
+ </dl>
+ 
+@@ -225,23 +225,23 @@
+ <h2 class="title">M</h2>
+ <dl>
+ 
+-<dt><span class="strong"><a href="src/F01.html#mag" title="Property in F01">mag</a></span> - Property in <a href="src/F01.html">F01</a>
++<dt><span class="strong"><a href="src/app.F01.html#mag" title="Property in app.F01">mag</a></span> - Property in <a href="src/app.F01.html">app.F01</a>
+ </dt><dd> <div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/Main.html" title="Class in src">Main</a></span> - Class in <a href="./src/package-summary.html">src</a>
++<dt><span class="strong"><a href="src/app.Main.html" title="Class in src">app.Main</a></span> - Class in <a href="./src/package-summary.html">src</a>
+ </dt><dd><div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/Main.html#Main()" title="Constructor in Main">Main()</a></span> - Constructor in <a href="src/Main.html">Main</a>
++<dt><span class="strong"><a href="src/app.Main.html#app.Main()" title="Constructor in app.Main">app.Main()</a></span> - Constructor in <a href="src/app.Main.html">app.Main</a>
+ </dt><dd> <div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/FractialLoader.html#mandel" title="Field in FractialLoader">mandel</a></span> - Field in <a href="src/FractialLoader.html">FractialLoader</a>
++<dt><span class="strong"><a href="src/app.FractialLoader.html#mandel" title="Field in app.FractialLoader">mandel</a></span> - Field in <a href="src/app.FractialLoader.html">app.FractialLoader</a>
+ </dt><dd> <div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/F01.html#mouseClicked(java.awt.event.MouseEvent)" title="Method in F01">mouseClicked(MouseEvent)</a></span> - Method in <a href="src/F01.html">F01</a>
++<dt><span class="strong"><a href="src/app.F01.html#mouseClicked(java.awt.event.MouseEvent)" title="Method in app.F01">mouseClicked(MouseEvent)</a></span> - Method in <a href="src/app.F01.html">app.F01</a>
+ </dt><dd> <div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/F01.html#mouseEntered(java.awt.event.MouseEvent)" title="Method in F01">mouseEntered(MouseEvent)</a></span> - Method in <a href="src/F01.html">F01</a>
++<dt><span class="strong"><a href="src/app.F01.html#mouseEntered(java.awt.event.MouseEvent)" title="Method in app.F01">mouseEntered(MouseEvent)</a></span> - Method in <a href="src/app.F01.html">app.F01</a>
+ </dt><dd> <div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/F01.html#mouseExited(java.awt.event.MouseEvent)" title="Method in F01">mouseExited(MouseEvent)</a></span> - Method in <a href="src/F01.html">F01</a>
++<dt><span class="strong"><a href="src/app.F01.html#mouseExited(java.awt.event.MouseEvent)" title="Method in app.F01">mouseExited(MouseEvent)</a></span> - Method in <a href="src/app.F01.html">app.F01</a>
+ </dt><dd> <div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/F01.html#mousePressed(java.awt.event.MouseEvent)" title="Method in F01">mousePressed(MouseEvent)</a></span> - Method in <a href="src/F01.html">F01</a>
++<dt><span class="strong"><a href="src/app.F01.html#mousePressed(java.awt.event.MouseEvent)" title="Method in app.F01">mousePressed(MouseEvent)</a></span> - Method in <a href="src/app.F01.html">app.F01</a>
+ </dt><dd> <div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/F01.html#mouseReleased(java.awt.event.MouseEvent)" title="Method in F01">mouseReleased(MouseEvent)</a></span> - Method in <a href="src/F01.html">F01</a>
++<dt><span class="strong"><a href="src/app.F01.html#mouseReleased(java.awt.event.MouseEvent)" title="Method in app.F01">mouseReleased(MouseEvent)</a></span> - Method in <a href="src/app.F01.html">app.F01</a>
+ </dt><dd> <div class="block"></div></dd>
+ </dl>
+ 
+@@ -264,11 +264,11 @@
+ <h2 class="title">P</h2>
+ <dl>
+ 
+-<dt><span class="strong"><a href="src/F01.html#paint(java.awt.Graphics)" title="Method in F01">paint(Graphics)</a></span> - Method in <a href="src/F01.html">F01</a>
++<dt><span class="strong"><a href="src/app.F01.html#paint(java.awt.Graphics)" title="Method in app.F01">paint(Graphics)</a></span> - Method in <a href="src/app.F01.html">app.F01</a>
+ </dt><dd> <div class="block">This function will paint the Mandelbrot on the canvas. </div></dd>
+-<dt><span class="strong"><a href="src/F01.html#panX" title="Property in F01">panX</a></span> - Property in <a href="src/F01.html">F01</a>
++<dt><span class="strong"><a href="src/app.F01.html#panX" title="Property in app.F01">panX</a></span> - Property in <a href="src/app.F01.html">app.F01</a>
+ </dt><dd> <div class="block"></div></dd>
+-<dt><span class="strong"><a href="src/F01.html#panY" title="Property in F01">panY</a></span> - Property in <a href="src/F01.html">F01</a>
++<dt><span class="strong"><a href="src/app.F01.html#panY" title="Property in app.F01">panY</a></span> - Property in <a href="src/app.F01.html">app.F01</a>
+ </dt><dd> <div class="block"></div></dd>
+ </dl>
+ 
+@@ -284,7 +284,7 @@
+ <h2 class="title">R</h2>
+ <dl>
+ 
+-<dt><span class="strong"><a href="src/VM_keep.html#retain" title="Field in VM_keep">retain</a></span> - Field in <a href="src/VM_keep.html">VM_keep</a>
++<dt><span class="strong"><a href="src/app.VM_keep.html#retain" title="Field in app.VM_keep">retain</a></span> - Field in <a href="src/app.VM_keep.html">app.VM_keep</a>
+ </dt><dd> <div class="block"></div></dd>
+ </dl>
+ 
+@@ -314,7 +314,7 @@
+ <h2 class="title">V</h2>
+ <dl>
+ 
+-<dt><span class="strong"><a href="src/VM_keep.html" title="Annotation Type in src">VM_keep</a></span> - Annotation Type in <a href="./src/package-summary.html">src</a>
++<dt><span class="strong"><a href="src/app.VM_keep.html" title="Annotation Type in src">app.VM_keep</a></span> - Annotation Type in <a href="./src/package-summary.html">src</a>
+ </dt><dd><div class="block"></div></dd>
+ </dl>
+ 
+@@ -323,7 +323,7 @@
+ <h2 class="title">W</h2>
+ <dl>
+ 
+-<dt><span class="strong"><a href="src/Main.html#width" title="Field in Main">width</a></span> - Field in <a href="src/Main.html">Main</a>
++<dt><span class="strong"><a href="src/app.Main.html#width" title="Field in app.Main">width</a></span> - Field in <a href="src/app.Main.html">app.Main</a>
+ </dt><dd> <div class="block"></div></dd>
+ </dl>
+ 
+Index: GroovyDocs/allclasses-frame.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- GroovyDocs/allclasses-frame.html	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ GroovyDocs/allclasses-frame.html	(date 1573816936729)
+@@ -32,10 +32,10 @@
+     <h1 class="bar">All Classes</h1>
+     <div class="indexContainer">
+         <ul>
+-        <li><a href="src/F01.html" title="class in src" target="classFrame">F01</a></li>
+-<li><a href="src/FractialLoader.html" title="class in src" target="classFrame">FractialLoader</a></li>
+-<li><a href="src/Main.html" title="class in src" target="classFrame">Main</a></li>
+-<li><a href="src/VM_keep.html" title="annotation type in src" target="classFrame">VM_keep</a></li>
++        <li><a href="src/app.F01.html" title="class in src" target="classFrame">app.F01</a></li>
++<li><a href="src/app.FractialLoader.html" title="class in src" target="classFrame">app.FractialLoader</a></li>
++<li><a href="src/app.Main.html" title="class in src" target="classFrame">app.Main</a></li>
++<li><a href="src/app.VM_keep.html" title="annotation type in src" target="classFrame">app.VM_keep</a></li>
+ 
+         </ul>
+     </div>
+Index: GroovyDocs/src/FractialLoader.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- GroovyDocs/src/FractialLoader.html	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ GroovyDocs/src/FractialLoader.html	(date 1573816936720)
+@@ -27,7 +27,7 @@
+ <html>
+ <head>
+     <!-- Generated by groovydoc (2.4.17) on Fri Nov 15 11:34:57 CET 2019 -->
+-    <title>FractialLoader (Groovy Documentation)</title>
++    <title>app.FractialLoader (Groovy Documentation)</title>
+     <meta name="date" content="2019-11-15">
+     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+     <link href="../groovy.ico" type="image/x-icon" rel="shortcut icon">
+@@ -37,7 +37,7 @@
+ <body class="center">
+ <script type="text/javascript"><!--
+ if (location.href.indexOf('is-external=true') == -1) {
+-    parent.document.title="FractialLoader (Groovy Documentation)";
++    parent.document.title="app.FractialLoader (Groovy Documentation)";
+ }
+ //-->
+ </script>
+@@ -63,8 +63,8 @@
+ <div class="subNav">
+     <div>
+         <ul class="navList">
+-            <li><a href="../index.html?src/FractialLoader" target="_top">Frames</a></li>
+-            <li><a href="FractialLoader.html" target="_top">No Frames</a></li>
++            <li><a href="../index.html?src/app.FractialLoader" target="_top">Frames</a></li>
++            <li><a href="app.FractialLoader.html" target="_top">No Frames</a></li>
+         </ul>
+     </div>
+     <div>
+@@ -87,7 +87,7 @@
+ 
+     <div class="subTitle">Package: <strong>src</strong></div>
+ 
+-    <h2 title="[Java] Class FractialLoader" class="title">[Java] Class FractialLoader</h2>
++    <h2 title="[Java] Class app.FractialLoader" class="title">[Java] Class app.FractialLoader</h2>
+ </div>
+ <div class="contentContainer">
+ <ul class="inheritance">
+@@ -126,7 +126,7 @@
+                         </tr>
+                         
+                         <tr class="altColor">
+-                            <td class="colFirst"><code><strong><a href='../src/F01.html'>F01</a></strong></code>&nbsp;</td>
++                            <td class="colFirst"><code><strong><a href='../src/app.F01.html'>app.F01</a></strong></code>&nbsp;</td>
+                             <td class="colLast"><code><a href="#mandel">mandel</a></code></td>
+                             <td class="colLast"></td>
+                         </tr>
+@@ -158,7 +158,7 @@
+                         
+                         <tr class="altColor">
+                             <td class="colFirst">
+-                                <code><a href="#FractialLoader()">FractialLoader</a>
++                                <code><a href="#app.FractialLoader()">app.FractialLoader</a>
+                                 ()</code><br></td>
+                         </tr>
+                         
+@@ -212,7 +212,7 @@
+                         <a name="mandel"><!-- --></a>
+                         <ul class="blockListLast">
+                             <li class="blockList">
+-                                <h4>public&nbsp;<a href='../src/F01.html'>F01</a> <strong>mandel</strong></h4>
++                                <h4>public&nbsp;<a href='../src/app.F01.html'>app.F01</a> <strong>mandel</strong></h4>
+                                 <p></p>
+                             </li>
+                         </ul>
+@@ -233,10 +233,10 @@
+                 </a>
+                     <h3>Constructor Detail</h3>
+                     
+-                        <a name="FractialLoader()"><!-- --></a>
++                        <a name="app.FractialLoader()"><!-- --></a>
+                         <ul class="blockListLast">
+                             <li class="blockList">
+-                                <h4><strong>FractialLoader</strong>()</h4>
++                                <h4><strong>app.FractialLoader</strong>()</h4>
+                                 <p></p>
+                             </li>
+                         </ul>
+@@ -271,8 +271,8 @@
+ <div class="subNav">
+     <div>
+         <ul class="navList">
+-            <li><a href="../index.html?src/FractialLoader" target="_top">Frames</a></li>
+-            <li><a href="FractialLoader.html" target="_top">No Frames</a></li>
++            <li><a href="../index.html?src/app.FractialLoader" target="_top">Frames</a></li>
++            <li><a href="app.FractialLoader.html" target="_top">No Frames</a></li>
+         </ul>
+     </div>
+     <div>
+Index: GroovyDocs/src/Main.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- GroovyDocs/src/Main.html	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ GroovyDocs/src/Main.html	(date 1573816936623)
+@@ -27,7 +27,7 @@
+ <html>
+ <head>
+     <!-- Generated by groovydoc (2.4.17) on Fri Nov 15 11:34:57 CET 2019 -->
+-    <title>Main (Groovy Documentation)</title>
++    <title>app.Main (Groovy Documentation)</title>
+     <meta name="date" content="2019-11-15">
+     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+     <link href="../groovy.ico" type="image/x-icon" rel="shortcut icon">
+@@ -37,7 +37,7 @@
+ <body class="center">
+ <script type="text/javascript"><!--
+ if (location.href.indexOf('is-external=true') == -1) {
+-    parent.document.title="Main (Groovy Documentation)";
++    parent.document.title="app.Main (Groovy Documentation)";
+ }
+ //-->
+ </script>
+@@ -63,8 +63,8 @@
+ <div class="subNav">
+     <div>
+         <ul class="navList">
+-            <li><a href="../index.html?src/Main" target="_top">Frames</a></li>
+-            <li><a href="Main.html" target="_top">No Frames</a></li>
++            <li><a href="../index.html?src/app.Main" target="_top">Frames</a></li>
++            <li><a href="app.Main.html" target="_top">No Frames</a></li>
+         </ul>
+     </div>
+     <div>
+@@ -87,7 +87,7 @@
+ 
+     <div class="subTitle">Package: <strong>src</strong></div>
+ 
+-    <h2 title="[Java] Class Main" class="title">[Java] Class Main</h2>
++    <h2 title="[Java] Class app.Main" class="title">[Java] Class app.Main</h2>
+ </div>
+ <div class="contentContainer">
+ <ul class="inheritance">
+@@ -126,7 +126,7 @@
+                         </tr>
+                         
+                         <tr class="altColor">
+-                            <td class="colFirst"><code><strong>private&nbsp;static&nbsp;<a href='../src/FractialLoader.html'>FractialLoader</a></strong></code>&nbsp;</td>
++                            <td class="colFirst"><code><strong>private&nbsp;static&nbsp;<a href='../src/app.FractialLoader.html'>app.FractialLoader</a></strong></code>&nbsp;</td>
+                             <td class="colLast"><code><a href="#floader">floader</a></code></td>
+                             <td class="colLast"></td>
+                         </tr>
+@@ -176,7 +176,7 @@
+                         
+                         <tr class="altColor">
+                             <td class="colFirst">
+-                                <code><a href="#Main()">Main</a>
++                                <code><a href="#app.Main()">app.Main</a>
+                                 ()</code><br></td>
+                         </tr>
+                         
+@@ -251,7 +251,7 @@
+                         <a name="floader"><!-- --></a>
+                         <ul class="blockListLast">
+                             <li class="blockList">
+-                                <h4>private&nbsp;static&nbsp;<a href='../src/FractialLoader.html'>FractialLoader</a> <strong>floader</strong></h4>
++                                <h4>private&nbsp;static&nbsp;<a href='../src/app.FractialLoader.html'>app.FractialLoader</a> <strong>floader</strong></h4>
+                                 <p></p>
+                             </li>
+                         </ul>
+@@ -296,10 +296,10 @@
+                 </a>
+                     <h3>Constructor Detail</h3>
+                     
+-                        <a name="Main()"><!-- --></a>
++                        <a name="app.Main()"><!-- --></a>
+                         <ul class="blockListLast">
+                             <li class="blockList">
+-                                <h4><strong>Main</strong>()</h4>
++                                <h4><strong>app.Main</strong>()</h4>
+                                 <p></p>
+                             </li>
+                         </ul>
+@@ -352,8 +352,8 @@
+ <div class="subNav">
+     <div>
+         <ul class="navList">
+-            <li><a href="../index.html?src/Main" target="_top">Frames</a></li>
+-            <li><a href="Main.html" target="_top">No Frames</a></li>
++            <li><a href="../index.html?src/app.Main" target="_top">Frames</a></li>
++            <li><a href="app.Main.html" target="_top">No Frames</a></li>
+         </ul>
+     </div>
+     <div>
+Index: GroovyDocs/src/F01.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- GroovyDocs/src/F01.html	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ GroovyDocs/src/F01.html	(date 1573816936691)
+@@ -27,7 +27,7 @@
+ <html>
+ <head>
+     <!-- Generated by groovydoc (2.4.17) on Fri Nov 15 11:34:56 CET 2019 -->
+-    <title>F01 (Groovy Documentation)</title>
++    <title>app.F01 (Groovy Documentation)</title>
+     <meta name="date" content="2019-11-15">
+     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+     <link href="../groovy.ico" type="image/x-icon" rel="shortcut icon">
+@@ -37,7 +37,7 @@
+ <body class="center">
+ <script type="text/javascript"><!--
+ if (location.href.indexOf('is-external=true') == -1) {
+-    parent.document.title="F01 (Groovy Documentation)";
++    parent.document.title="app.F01 (Groovy Documentation)";
+ }
+ //-->
+ </script>
+@@ -63,8 +63,8 @@
+ <div class="subNav">
+     <div>
+         <ul class="navList">
+-            <li><a href="../index.html?src/F01" target="_top">Frames</a></li>
+-            <li><a href="F01.html" target="_top">No Frames</a></li>
++            <li><a href="../index.html?src/app.F01" target="_top">Frames</a></li>
++            <li><a href="app.F01.html" target="_top">No Frames</a></li>
+         </ul>
+     </div>
+     <div>
+@@ -87,7 +87,7 @@
+ 
+     <div class="subTitle">Package: <strong>src</strong></div>
+ 
+-    <h2 title="[Groovy] Class F01" class="title">[Groovy] Class F01</h2>
++    <h2 title="[Groovy] Class app.F01" class="title">[Groovy] Class app.F01</h2>
+ </div>
+ <div class="contentContainer">
+ <ul class="inheritance">
+@@ -104,7 +104,7 @@
+             <!-- todo: direct known subclasses -->
+             <hr>
+             <br>
+-<pre>class F01
++<pre>class app.F01
+ extends java.awt.Component
+ 
+ </pre>
+@@ -197,7 +197,7 @@
+                         
+                         <tr class="altColor">
+                             <td class="colFirst">
+-                                <code><a href="#F01()">F01</a>
++                                <code><a href="#app.F01()">app.F01</a>
+                                 ()</code><br></td>
+                         </tr>
+                         
+@@ -349,10 +349,10 @@
+                 </a>
+                     <h3>Constructor Detail</h3>
+                     
+-                        <a name="F01()"><!-- --></a>
++                        <a name="app.F01()"><!-- --></a>
+                         <ul class="blockListLast">
+                             <li class="blockList">
+-                                <h4><strong>F01</strong>()</h4>
++                                <h4><strong>app.F01</strong>()</h4>
+                                 <p></p>
+                             </li>
+                         </ul>
+@@ -427,7 +427,7 @@
+                         <a name="paint(java.awt.Graphics)"><!-- --></a>
+                         <ul class="blockListLast">
+                             <li class="blockList">
+-                                <h4>@<a href='../src/VM_keep.html' title='VM_keep'>VM_keep</a>(retain = true)
++                                <h4>@<a href='../src/app.VM_keep.html' title='app.VM_keep'>app.VM_keep</a>(retain = true)
+ @java.lang.Override
+ void <strong>paint</strong>(java.awt.Graphics g)</h4>
+                                 <p>
+@@ -464,8 +464,8 @@
+ <div class="subNav">
+     <div>
+         <ul class="navList">
+-            <li><a href="../index.html?src/F01" target="_top">Frames</a></li>
+-            <li><a href="F01.html" target="_top">No Frames</a></li>
++            <li><a href="../index.html?src/app.F01" target="_top">Frames</a></li>
++            <li><a href="app.F01.html" target="_top">No Frames</a></li>
+         </ul>
+     </div>
+     <div>
+Index: GroovyDocs/src/VM_keep.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- GroovyDocs/src/VM_keep.html	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ GroovyDocs/src/VM_keep.html	(date 1573816936636)
+@@ -27,7 +27,7 @@
+ <html>
+ <head>
+     <!-- Generated by groovydoc (2.4.17) on Fri Nov 15 11:34:57 CET 2019 -->
+-    <title>VM_keep (Groovy Documentation)</title>
++    <title>app.VM_keep (Groovy Documentation)</title>
+     <meta name="date" content="2019-11-15">
+     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+     <link href="../groovy.ico" type="image/x-icon" rel="shortcut icon">
+@@ -37,7 +37,7 @@
+ <body class="center">
+ <script type="text/javascript"><!--
+ if (location.href.indexOf('is-external=true') == -1) {
+-    parent.document.title="VM_keep (Groovy Documentation)";
++    parent.document.title="app.VM_keep (Groovy Documentation)";
+ }
+ //-->
+ </script>
+@@ -63,8 +63,8 @@
+ <div class="subNav">
+     <div>
+         <ul class="navList">
+-            <li><a href="../index.html?src/VM_keep" target="_top">Frames</a></li>
+-            <li><a href="VM_keep.html" target="_top">No Frames</a></li>
++            <li><a href="../index.html?src/app.VM_keep" target="_top">Frames</a></li>
++            <li><a href="app.VM_keep.html" target="_top">No Frames</a></li>
+         </ul>
+     </div>
+     <div>
+@@ -87,7 +87,7 @@
+ 
+     <div class="subTitle">Package: <strong>src</strong></div>
+ 
+-    <h2 title="[Java] Annotation Type VM_keep" class="title">[Java] Annotation Type VM_keep</h2>
++    <h2 title="[Java] Annotation Type app.VM_keep" class="title">[Java] Annotation Type app.VM_keep</h2>
+ </div>
+ <div class="contentContainer">
+ <ul class="inheritance">
+@@ -230,8 +230,8 @@
+ <div class="subNav">
+     <div>
+         <ul class="navList">
+-            <li><a href="../index.html?src/VM_keep" target="_top">Frames</a></li>
+-            <li><a href="VM_keep.html" target="_top">No Frames</a></li>
++            <li><a href="../index.html?src/app.VM_keep" target="_top">Frames</a></li>
++            <li><a href="app.VM_keep.html" target="_top">No Frames</a></li>
+         </ul>
+     </div>
+     <div>
+Index: GroovyDocs/src/package-frame.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- GroovyDocs/src/package-frame.html	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ GroovyDocs/src/package-frame.html	(date 1573816936662)
+@@ -43,7 +43,7 @@
+ <div class="indexContainer">
+     <h2>Classes</h2>
+     <ul>
+-        <li><a href="F01.html" title="class in src" target="classFrame">F01</a></li><li><a href="FractialLoader.html" title="class in src" target="classFrame">FractialLoader</a></li><li><a href="Main.html" title="class in src" target="classFrame">Main</a></li>
++        <li><a href="app.F01.html" title="class in src" target="classFrame">app.F01</a></li><li><a href="app.FractialLoader.html" title="class in src" target="classFrame">app.FractialLoader</a></li><li><a href="app.Main.html" title="class in src" target="classFrame">app.Main</a></li>
+     </ul>
+ </div>
+ 
+@@ -55,7 +55,7 @@
+ <div class="indexContainer">
+     <h2>Annotation Types</h2>
+     <ul>
+-        <li><a href="VM_keep.html" title="annotation type in src" target="classFrame">VM_keep</a></li>
++        <li><a href="app.VM_keep.html" title="annotation type in src" target="classFrame">app.VM_keep</a></li>
+     </ul>
+ </div>
+ 
+Index: GroovyDocs/src/package-summary.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- GroovyDocs/src/package-summary.html	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ GroovyDocs/src/package-summary.html	(date 1573816936675)
+@@ -90,24 +90,24 @@
+                     </tr>
+ <tr class="altColor">
+                             <td class="colOne">
+-                                <strong><a href="F01.html" title="class in src">
+-                                    F01
++                                <strong><a href="app.F01.html" title="class in src">
++                                    app.F01
+                                 </a></strong>
+                             </td>
+                             <td></td>
+                         </tr>
+ <tr class="altColor">
+                             <td class="colOne">
+-                                <strong><a href="FractialLoader.html" title="class in src">
+-                                    FractialLoader
++                                <strong><a href="app.FractialLoader.html" title="class in src">
++                                    app.FractialLoader
+                                 </a></strong>
+                             </td>
+                             <td></td>
+                         </tr>
+ <tr class="altColor">
+                             <td class="colOne">
+-                                <strong><a href="Main.html" title="class in src">
+-                                    Main
++                                <strong><a href="app.Main.html" title="class in src">
++                                    app.Main
+                                 </a></strong>
+                             </td>
+                             <td></td>
+@@ -136,8 +136,8 @@
+                     </tr>
+ <tr class="altColor">
+                             <td class="colOne">
+-                                <strong><a href="VM_keep.html" title="class in src">
+-                                    VM_keep
++                                <strong><a href="app.VM_keep.html" title="class in src">
++                                    app.VM_keep
+                                 </a></strong>
+                             </td>
+                             <td></td>
+Index: src/app/FractialLoader.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/FractialLoader.java	(date 1573816936654)
++++ src/app/FractialLoader.java	(date 1573816936654)
+@@ -0,0 +1,30 @@
++package app;
++
++import app.db.DB;
++
++import java.util.function.Consumer;
++
++public class FractialLoader {
++
++
++
++
++    public F01 mandel = new F01();
++
++
++
++    public DB db = new DB(new Integer(8));
++
++
++
++
++
++    public void register(Consumer<Class>... cl) {
++        if(cl == null) {
++            return;
++        }
++    }
++
++
++
++}
+Index: src/app/DB.groovy
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/app/DB.groovy	(date 1573816936646)
++++ src/app/DB.groovy	(date 1573816936646)
+@@ -0,0 +1,19 @@
++package app.db
++
++class DB<CLASS> {
++
++
++    String name = ""
++    Object data = null;
++
++    DB(CLASS cl) {
++        this.name = cl.toString()
++        this.data = cl.any {
++            m ->
++                m.toString()
++        }
++    }
++
++
++
++}
+Index: .idea/dynamic.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dynamic.xml	(date 1573816936536)
++++ .idea/dynamic.xml	(date 1573816936536)
+@@ -0,0 +1,37 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="DynamicElementsStorage">
++    <option name="containingClasses">
++      <map>
++        <entry key="app.db.DB">
++          <value>
++            <DClassElement>
++              <option name="name" value="app.db.DB" />
++              <option name="myName" value="app.db.DB" />
++              <option name="myProperties">
++                <set>
++                  <DPropertyElement>
++                    <option name="name" value="data" />
++                    <option name="static" value="false" />
++                    <option name="type" value="java.lang.Boolean" />
++                    <option name="myType" value="java.lang.Boolean" />
++                    <option name="myStatic" value="false" />
++                    <option name="myName" value="data" />
++                  </DPropertyElement>
++                  <DPropertyElement>
++                    <option name="name" value="name" />
++                    <option name="static" value="false" />
++                    <option name="type" value="java.lang.String" />
++                    <option name="myType" value="java.lang.String" />
++                    <option name="myStatic" value="false" />
++                    <option name="myName" value="name" />
++                  </DPropertyElement>
++                </set>
++              </option>
++            </DClassElement>
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: META-INF/MANIFEST.MF
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- META-INF/MANIFEST.MF	(date 1573816982148)
++++ META-INF/MANIFEST.MF	(date 1573816982148)
+@@ -0,0 +1,3 @@
++Manifest-Version: 1.0
++Main-Class: app.Main
++
+Index: src/VM_keep.java
+===================================================================
+--- src/VM_keep.java	(revision d53eec966e632559c4e88a72f485170d80dd7b88)
++++ src/app/VM_keep.java	(date 1573816936590)
+@@ -1,3 +1,5 @@
++package app;
++
+ import java.lang.annotation.ElementType;
+ import java.lang.annotation.Retention;
+ import java.lang.annotation.RetentionPolicy;
+Index: .idea/artifacts/build.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/artifacts/build.xml	(date 1573816834057)
++++ .idea/artifacts/build.xml	(date 1573816834057)
+@@ -0,0 +1,12 @@
++<component name="ArtifactManager">
++  <artifact type="jar" name="build">
++    <output-path>$PROJECT_DIR$/out/artifacts/build</output-path>
++    <root id="archive" name="build.jar">
++      <element id="module-output" name="Fractal builder" />
++      <element id="library" level="application" name="groovy-3.0.0-beta-3" />
++      <element id="directory" name="META-INF">
++        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
++      </element>
++    </root>
++  </artifact>
++</component>
+\ No newline at end of file
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/uiDesigner.xml	(date 1573816936548)
++++ .idea/uiDesigner.xml	(date 1573816936548)
+@@ -0,0 +1,124 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Palette2">
++    <group name="Swing">
++      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
++      </item>
++      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.png" removable="false" auto-create-binding="false" can-attach-label="true">
++        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
++        <initial-values>
++          <property name="text" value="Button" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="RadioButton" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="CheckBox" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
++        <initial-values>
++          <property name="text" value="Label" />
++        </initial-values>
++      </item>
++      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
++          <preferred-size width="150" height="-1" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
++          <preferred-size width="150" height="50" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
++          <preferred-size width="200" height="200" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.png" removable="false" auto-create-binding="true" can-attach-label="true">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
++      </item>
++      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
++      </item>
++      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
++          <preferred-size width="-1" height="20" />
++        </default-constraints>
++      </item>
++      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.png" removable="false" auto-create-binding="false" can-attach-label="false">
++        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
++      </item>
++      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.png" removable="false" auto-create-binding="true" can-attach-label="false">
++        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
++      </item>
++    </group>
++  </component>
++</project>
+\ No newline at end of file

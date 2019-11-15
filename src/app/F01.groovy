@@ -1,9 +1,9 @@
-import groovy.transform.Generated
+package app
+
 
 import java.awt.Color
 import java.awt.Component
 import java.awt.Graphics
-import java.awt.color.ColorSpace
 import java.awt.event.MouseEvent
 import java.awt.event.MouseListener
 
@@ -64,8 +64,8 @@ class F01 extends Component implements MouseListener{
     void paint(Graphics g) {
         super.paint(g)
 
-//        for(int i = 0; i < Main.width; i++) {
-//            for(int j = 0; j < Main.height; j++) {
+//        for(int i = 0; i < app.Main.width; i++) {
+//            for(int j = 0; j < app.Main.height; j++) {
 //            }
 //        }
 

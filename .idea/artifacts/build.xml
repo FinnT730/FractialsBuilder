@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="build">
+    <output-path>$PROJECT_DIR$/out/artifacts/build</output-path>
+    <root id="archive" name="build.jar">
+      <element id="module-output" name="Fractal builder" />
+      <element id="library" level="application" name="groovy-3.0.0-beta-3" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

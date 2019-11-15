@@ -1,7 +1,6 @@
-import groovyjarjarasm.asm.AnnotationVisitor;
+package app;
 
 import javax.swing.*;
-import java.awt.event.MouseListener;
 
 public class Main {
 
