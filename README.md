@@ -11,3 +11,8 @@ THERE IS NO WARRANTY GIVEN IF SOMETHING WOULD HAPEN TO YOU!
 If you have a bug, please use the issue page.
 
 if you have a fix for something and you want to have it on the main project, please make a pull-request. 
+
+
+
+
+**`Groovy is needed as well, latest version works fine!!`**
