@@ -25,7 +25,7 @@ public class Main {
         fr.setSize(width,height);
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setVisible(true);
-        fr.add(f0).addMouseListener(floader.mandel);
+        fr.add(floader.mandel).addMouseListener(floader.mandel);
     }
 
 

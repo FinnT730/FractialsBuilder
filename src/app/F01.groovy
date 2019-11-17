@@ -14,7 +14,6 @@ class F01 extends Component implements MouseListener{
     float panX = 0.7
     float panY = 0.6
 
-
     /***
      *
      * @param x
@@ -24,7 +23,7 @@ class F01 extends Component implements MouseListener{
     def belongsIn(double x, double y) {
 
 
-        float maxI = 50
+        float maxI = 100
 
 
         float realC = x
@@ -40,8 +39,8 @@ class F01 extends Component implements MouseListener{
             imC = ti
 
 
-            if(realC * imC > 1) {
-                return (i / maxI * 100)
+            if(realC * imC > 10) {
+                    return (i / maxI * 100)
             }
 
         }
@@ -72,28 +71,38 @@ class F01 extends Component implements MouseListener{
 
 
 
-        for(int i = 0; i < Main.width; i++) {
-            for(int j = 0; j < Main.height; j++) {
+        for(int i = 0; i < Main.width; i += 1) {
+            for(int j = 0; j < Main.height; j += 1) {
                 def isIn = belongsIn(i / mag - panX, j / mag - panY)
 
                 if(isIn == 0) {
                     g.setColor(Color.BLACK)
                     g.fillRect(i,j,1,1)
                 } else {
-                    g.setColor(new Color(isIn.intValue(),0,new Random().nextInt(60)))
+                    g.setColor(new Color(isIn.intValue(),100,200))
                     g.fillRect(i,j,1,1)
                 }
             }
         }
 
+        g.setColor(Color.WHITE)
+//        g.drawString(Main.width / mag / panX + ":" +  Main.height / mag / panY,150,150)
+
     }
 
     @Override
     void mouseClicked(MouseEvent e) {
-        for(int i = 0; i < 100; i++) {
-            mag += 1;
-            repaint()
-        }
+//        for(int i = 0; i < 100; i++) {
+//            mag += 1;
+//            repaint()
+//        }
+
+        System.gc()
+        mag += 200
+        panX += 0.001f
+        panY -= 0.001f
+
+
         repaint()
     }
 
